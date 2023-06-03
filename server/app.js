@@ -5,9 +5,10 @@ const mongoose = require("mongoose");
 
 const app = express();
 
-//connect to mLab server
+//connect to mLab server - need to provide db name after cluster/
+//mongo atlas will not let admin db to be tempered
 mongoose.connect(
-  "mongodb+srv://rupam0912:0EtC5jMu7Ulxbctc@cluster0.b96sw1c.mongodb.net/?retryWrites=true&w=majority"
+  "mongodb+srv://rupam0912:0EtC5jMu7Ulxbctc@cluster0.b96sw1c.mongodb.net/graphQL-db?retryWrites=true&w=majority"
 );
 mongoose.connection.once("open", () => {
   console.log("connected to mongo");
